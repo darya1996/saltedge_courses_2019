@@ -1,0 +1,19 @@
+<div class="well" ng-show="custData != null">
+				<p class="grey-txt s3 ng-binding"><span translate="MENU.ASIDE.SYSTEM_DATE.NAME" class="ng-scope">Счетоводна дата</span> 07/04/2019</p>
+				<div class="user">
+					<p class="grey-txt s3 display-inl-block ng-scope" translate="MENU.ASIDE.USER.NAME">Потребител</p>
+					<!-- TODO: add filter for name translation -->
+					<h5 id="user--identificator" ng-class="{'ellipsis-txt': custData.customer.length > 1}" ng-bind="custData.mainCustomer | custNameTranslateFilter" class="ng-binding">ТЕСТОВИ ПОТРЕБИТЕЛ</h5>
+				</div>
+				<div class="customer">
+					<p class="grey-txt s3 display-inl-block ng-scope" translate="MENU.ASIDE.CUSTOMER.NAME">Клиент</p>
+					<div class="dropdown display-inl-block pull-right ng-hide" is-open="custMenu.isOpen" ng-show="custData.customer.length > 1">
+						<a href="" data-toggle="dropdown" class="dropdown-toggle nav-change-client" aria-haspopup="true" aria-expanded="false"></a>
+						<ul class="dropdown-menu">
+							<!--<li ng-repeat="cust in custData.customer | custListOtherFilter">  -->
+							<!-- ngRepeat: cust in custData.customer | custListOtherFilter | orderBy:'fullNameCyrillic' -->
+						</ul>
+					</div>
+					<h5 ng-class="{'ellipsis-txt': custData.customer.length > 1}" ng-bind="currentCustomer | custNameTranslateFilter" class="ng-binding">ТЕСТОВИ ПОТРЕБИТЕЛ</h5>
+				</div>
+			</div>

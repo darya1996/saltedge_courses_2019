@@ -16,7 +16,3 @@ class Web_Banking< Accounts
 	  @browser ||= Watir::Browser.new :chrome
   end	
 end	
-
-
-wb = Web_Banking.new
-wb.run

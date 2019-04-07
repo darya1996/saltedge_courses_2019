@@ -23,4 +23,5 @@ class Transactions
   def transaction_html
 	Nokogiri::HTML.fragment(browser.table(id: "lastFiveTransactions").html)
   end	
+
 end	

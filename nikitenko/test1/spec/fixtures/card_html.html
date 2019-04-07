@@ -1,0 +1,66 @@
+<table ng-if="dataSource.filteredData.length > 0" id="dashboardDeposits" class="module grid  grid-50" ng-class="{'scrollable-grid': gridOptions.scrollable }" ng-style="{'max-height':'' }">
+    <thead>
+      <!-- ngRepeat: row in gridOptions.headerRows -->
+      <tr class="header-row">
+        <!-- ngRepeat: col in gridOptions.columns --><th ng-repeat="col in gridOptions.columns" ng-click="columnHeaderClick(col)" class="first-cell" ng-style="{width: col.remWidth }" ng-class="{'first-cell': col.index == 0, 'sortable': col.orderable, 'sorting-asc': dataSource.orderByField == col.field &amp;&amp; dataSource.orderByDirection == 'asc', 'sorting-desc': dataSource.orderByField == col.field &amp;&amp; dataSource.orderByDirection == 'desc'}">
+          <!-- ngIf: col.index == 0 && gridOptions.rowSelection=='Multiple' && !gridOptions.maxRowSelection -->
+          <span class="ng-binding">Сметка</span>
+        </th><!-- end ngRepeat: col in gridOptions.columns --><th ng-repeat="col in gridOptions.columns" ng-click="columnHeaderClick(col)" class="text-center sortable" ng-style="{width: col.remWidth }" ng-class="{'first-cell': col.index == 0, 'sortable': col.orderable, 'sorting-asc': dataSource.orderByField == col.field &amp;&amp; dataSource.orderByDirection == 'asc', 'sorting-desc': dataSource.orderByField == col.field &amp;&amp; dataSource.orderByDirection == 'desc'}" style="width: 4.4rem;">
+          <!-- ngIf: col.index == 0 && gridOptions.rowSelection=='Multiple' && !gridOptions.maxRowSelection -->
+          <span class="ng-binding">Валута</span>
+        </th><!-- end ngRepeat: col in gridOptions.columns --><th ng-repeat="col in gridOptions.columns" ng-click="columnHeaderClick(col)" class="sortable" ng-style="{width: col.remWidth }" ng-class="{'first-cell': col.index == 0, 'sortable': col.orderable, 'sorting-asc': dataSource.orderByField == col.field &amp;&amp; dataSource.orderByDirection == 'asc', 'sorting-desc': dataSource.orderByField == col.field &amp;&amp; dataSource.orderByDirection == 'desc'}" style="width: 8.73333rem;">
+          <!-- ngIf: col.index == 0 && gridOptions.rowSelection=='Multiple' && !gridOptions.maxRowSelection -->
+          <span class="ng-binding">Разполагаемост</span>
+        </th><!-- end ngRepeat: col in gridOptions.columns --><th ng-repeat="col in gridOptions.columns" ng-click="columnHeaderClick(col)" class="sortable" ng-style="{width: col.remWidth }" ng-class="{'first-cell': col.index == 0, 'sortable': col.orderable, 'sorting-asc': dataSource.orderByField == col.field &amp;&amp; dataSource.orderByDirection == 'asc', 'sorting-desc': dataSource.orderByField == col.field &amp;&amp; dataSource.orderByDirection == 'desc'}" style="width: 8.73333rem;">
+          <!-- ngIf: col.index == 0 && gridOptions.rowSelection=='Multiple' && !gridOptions.maxRowSelection -->
+          <span class="ng-binding">Натрупана лихва</span>
+        </th><!-- end ngRepeat: col in gridOptions.columns --><th ng-repeat="col in gridOptions.columns" ng-click="columnHeaderClick(col)" class="sortable" ng-style="{width: col.remWidth }" ng-class="{'first-cell': col.index == 0, 'sortable': col.orderable, 'sorting-asc': dataSource.orderByField == col.field &amp;&amp; dataSource.orderByDirection == 'asc', 'sorting-desc': dataSource.orderByField == col.field &amp;&amp; dataSource.orderByDirection == 'desc'}" style="width: 8.2rem;">
+          <!-- ngIf: col.index == 0 && gridOptions.rowSelection=='Multiple' && !gridOptions.maxRowSelection -->
+          <span class="ng-binding">Падеж</span>
+        </th><!-- end ngRepeat: col in gridOptions.columns --><th ng-repeat="col in gridOptions.columns" ng-click="columnHeaderClick(col)" class="" ng-style="{width: col.remWidth }" ng-class="{'first-cell': col.index == 0, 'sortable': col.orderable, 'sorting-asc': dataSource.orderByField == col.field &amp;&amp; dataSource.orderByDirection == 'asc', 'sorting-desc': dataSource.orderByField == col.field &amp;&amp; dataSource.orderByDirection == 'desc'}" style="width: 9.86667rem;">
+          <!-- ngIf: col.index == 0 && gridOptions.rowSelection=='Multiple' && !gridOptions.maxRowSelection -->
+          <span class="ng-binding">Действия</span>
+        </th><!-- end ngRepeat: col in gridOptions.columns -->
+      </tr>
+    </thead>
+    <tbody>
+<!--<tr sly-repeat="row in dataSource.filteredData" sly-evaluate-only-when='changeMarker'>-->
+      <!-- ngRepeat: row in dataSource.filteredData | limitTo:dataSource.itemsToDisplay --><tr id="step1" bindonce="" ng-repeat="row in dataSource.filteredData | limitTo:dataSource.itemsToDisplay" bo-class="{'odd': $index % 2 == 0, 'even': $index % 2 == 1}" class="ng-scope odd">
+<!--<td>a</td>
+                        <td>a</td>
+                        <td>a</td>
+                        <td>a</td>
+                        <td>a</td>
+                        <td>a</td>
+                        <td>a</td>-->
+        <!-- ngRepeat: col in gridOptions.columns --><td bindonce="" ng-repeat="col in gridOptions.columns" sg-bind-html-compile="col.cellTemplate" bo-class="col.className" bo-style="{width: col.remWidth }" class="ng-scope icon-two-line-col"><div class="first-cell cellText ng-scope"><i bo-class="{'active':row.selected }" class="i-32 active icon i-circle-deposit"></i><div class="info-wrapper" style="width:21.666666666666668rem"><p class="s3 bold" bo-bind="row.acDesc">BG35FINV91502003939180  USD</p><a ui-sref="app.layout.DEPOSITS.DETAILS.{IBAN}({iban:'BG35FINV91502003939180'})" href="/EBank/deposits/details/BG35FINV91502003939180"><span bo-bind="row.iban">BG35FINV91502003939180</span><i class="i-arrow-right-5x8"></i></a></div></div></td><!-- end ngRepeat: col in gridOptions.columns --><td bindonce="" ng-repeat="col in gridOptions.columns" sg-bind-html-compile="col.cellTemplate" bo-class="col.className" bo-style="{width: col.remWidth }" class="ng-scope" style="width: 4.4rem;"><div style="width: 4.4rem" class="text-center cellText ng-scope"><span bo-bind="row.ccy">USD</span></div></td><!-- end ngRepeat: col in gridOptions.columns --><td bindonce="" ng-repeat="col in gridOptions.columns" sg-bind-html-compile="col.cellTemplate" bo-class="col.className" bo-style="{width: col.remWidth }" class="ng-scope" style="width: 8.73333rem;"><div style="width: 8.733333333333333rem" class="text-right cellText ng-scope"><span bo-bind="row.acyAvlBal | sgCurrency">10.39</span></div></td><!-- end ngRepeat: col in gridOptions.columns --><td bindonce="" ng-repeat="col in gridOptions.columns" sg-bind-html-compile="col.cellTemplate" bo-class="col.className" bo-style="{width: col.remWidth }" class="ng-scope" style="width: 8.73333rem;"><div style="width: 8.733333333333333rem" class="text-right cellText ng-scope"><span bo-bind="row.acyAccruedCrIc | sgCurrency">0.00</span></div></td><!-- end ngRepeat: col in gridOptions.columns --><td bindonce="" ng-repeat="col in gridOptions.columns" sg-bind-html-compile="col.cellTemplate" bo-class="col.className" bo-style="{width: col.remWidth }" class="ng-scope" style="width: 8.2rem;"><div style="width: 8.2rem" class="text-center progress-bar-cell cellText ng-scope"><div popover-html-unsafe="<span class=&quot;bold blue-txt&quot;>Остават 90 дни</span>" popover-append-to-body="true" popover-trigger="mouseenter" class="ng-scope"><span ng-hide="row.undefined== 0" bo-bind="row.maturityDate | sgDate">06/07/2019</span></div><div ng-hide="row.undefined== 0" sg-progress-bar="" current-value="row.currDate" max-value="row.allDays" class="ng-isolate-scope"><div>
+  <div class=" progress progress" progressbar="" animate="false" value="currentValue" max="maxValue" type="init" ng-class="{'overflow': overflowProgressbar}">
+  <div class="progress-bar progress-bar-init" ng-class="type &amp;&amp; 'progress-bar-' + type" role="progressbar" aria-valuenow="640" aria-valuemin="0" aria-valuemax="730" ng-style="{width: percent + '%'}" aria-valuetext="88%" ng-transclude="" style="transition: none 0s ease 0s; width: 87.67%;"></div>
+</div>
+</div>
+</div><span class="green-txt ng-scope ng-hide" ng-show="row.undefined== 0" translate="undefined">undefined</span></div></td><!-- end ngRepeat: col in gridOptions.columns --><td bindonce="" ng-repeat="col in gridOptions.columns" sg-bind-html-compile="col.cellTemplate" bo-class="col.className" bo-style="{width: col.remWidth }" class="ng-scope" style="width: 9.86667rem;"><div style="width: 9.866666666666667rem" class="cellButtonGroup ng-scope"><div document-id="BG35FINV91502003939180" id="infButtStep" sg-info-buttons="" class="ng-scope"><div class="btn-icon-group">
+  <div class="display-inl-block ng-scope" popover="ФУНКЦИОНАЛНОСТТА НЕ Е НАЛИЧНА" popover-append-to-body="true" popover-trigger="mouseenter">
+    <!-- ngIf: iban --><a class="btn btn-icon-only ng-scope" ng-click="closeIfModal()" ng-disabled="disableSettings.py" ng-if="iban" popover="НОВ ПРЕВОД" popover-append-to-body="true" popover-trigger="mouseenter" ui-sref="app.layout.DASHBOARD" href="/EBank/dashboard" disabled="disabled">
+      <i class="i-16 i-btn-white-new-payment"></i>
+    </a><!-- end ngIf: iban -->
+  </div>
+  <!-- ngIf: iban && (account.category == 'CA' || account.category == 'CC') -->
+  <!-- ngIf: iban && account.category == 'TD' --><a class="btn btn-icon-only ng-scope" ng-click="closeIfModal()" ng-disabled="disableSettings.dpst" ng-if="iban &amp;&amp; account.category == 'TD'" popover="СПРАВКА" popover-append-to-body="true" popover-trigger="mouseenter" ui-sref="app.layout.DEPOSITS.STATEMENT.{IBAN}({iban:'BG35FINV91502003939180'})" href="/EBank/deposits/statement/BG35FINV91502003939180">
+    <i class="i-16 i-btn-white-spravki"></i>
+  </a><!-- end ngIf: iban && account.category == 'TD' -->
+  <div class="display-inl-block ng-scope" popover="ФУНКЦИОНАЛНОСТТА НЕ Е НАЛИЧНА" popover-append-to-body="true" popover-trigger="mouseenter">
+    <!-- ngIf: iban --><a class="btn btn-icon-only ng-scope" ng-click="closeIfModal()" ng-disabled="disableSettings.mp" ng-if="iban" popover="МАСОВ ПРЕВОД" popover-append-to-body="true" popover-trigger="mouseenter" ui-sref="app.layout.DASHBOARD" href="/EBank/dashboard" disabled="disabled">
+      <i class="i-18 i-btn-white-mass-payment"></i>
+    </a><!-- end ngIf: iban -->
+  </div>
+  <!-- ngIf: iban --><a class="btn btn-icon-only ng-scope" ng-click="closeIfModal()" ng-disabled="disableSettings.serv" ng-if="iban" popover="УСЛУГИ" popover-append-to-body="true" popover-trigger="mouseenter" ui-sref="app.layout.SERVICES.EMAIL_STMT_ACC.{IBAN}({iban:'BG35FINV91502003939180'})" href="/EBank/services/email-stmt-acc/BG35FINV91502003939180">
+    <i class="i-16 i-btn-white-izvlechenia"></i>
+  </a><!-- end ngIf: iban -->
+</div>
+</div></div></td><!-- end ngRepeat: col in gridOptions.columns -->
+      </tr><!-- end ngRepeat: row in dataSource.filteredData | limitTo:dataSource.itemsToDisplay -->
+    </tbody>
+    <tfoot>
+      <!-- ngRepeat: row in gridOptions.footerRows -->
+    </tfoot>
+  </table>
