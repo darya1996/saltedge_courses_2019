@@ -8,7 +8,6 @@ describe Accounts do
   let(:transaction_html) {nokogiri.fragment(File.read("fixtures/transaction_html.html"))}
 
   before do
-    #allow(subject).to receive(:browser)
     allow(subject).to receive(:acc_name_html) { acc_name_html }
     allow(subject).to receive(:card_html) { card_html }
     allow(subject).to receive(:transaction_html) { transaction_html }
